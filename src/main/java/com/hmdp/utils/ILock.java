@@ -1,7 +1,22 @@
-package com.hmdp.utils;/**
+package com.hmdp.utils;
+
+/**
  * ILock
- * 
+ *
  * @author fj
  * @since 2023/3/6 19:57
- */public interface ILock {
+ */
+public interface ILock {
+
+    /**
+     * 尝试获取锁
+     * @param timeoutSec 锁持有的超时时间，过期后自动释放
+     * @return true代表获取成功，false代表获取失败
+     */
+    boolean tryLock(long timeoutSec);
+
+    /**
+     * 释放锁
+     */
+    void unlock();
 }
